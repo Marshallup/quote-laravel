@@ -1,0 +1,90 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My First API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/{any}": {
+            "get": {
+                "tags": [
+                    "Vue приложение"
+                ],
+                "summary": "app.blade.php - вид для приложения",
+                "description": "По всем незарегестрированным роутам отдаем наше vue приложение",
+                "responses": {
+                    "200": {
+                        "description": "Отдает вид, где расположено vue."
+                    }
+                }
+            }
+        },
+        "/api/quotes/create": {
+            "post": {
+                "tags": [
+                    "Модель цитаты"
+                ],
+                "summary": "Создает цитату",
+                "description": "Создает цитату",
+                "responses": {
+                    "200": {
+                        "description": "Создаем цитату"
+                    }
+                }
+            }
+        },
+        "/api/quotes": {
+            "get": {
+                "tags": [
+                    "Модель цитаты"
+                ],
+                "summary": "Получает цитаты по 10 на странице",
+                "description": "Получает цитаты по 10 на странице",
+                "responses": {
+                    "200": {
+                        "description": "Список цитат с пагинацией по 10"
+                    }
+                }
+            }
+        },
+        "/api/quotes/{id}": {
+            "get": {
+                "tags": [
+                    "Модель цитаты"
+                ],
+                "summary": "Получает цитату по ID",
+                "description": "Получает цитату по ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID цитаты",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Отдает конкретную цитату по id"
+                    }
+                }
+            }
+        },
+        "/api/tags": {
+            "get": {
+                "tags": [
+                    "Модель Тега"
+                ],
+                "summary": "Получает теги",
+                "description": "Получает теги",
+                "responses": {
+                    "200": {
+                        "description": "Получает теги"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

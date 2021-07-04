@@ -14,5 +14,4 @@ use \App\Http\Controllers\FrontendController;
 |
 */
 
-//Route::get('/{any}', [FrontendController::class, 'app'])->where('any', '.*');
 Route::any('/{any}', [FrontendController::class, 'app'])->where('any', '^(?!api).*$');

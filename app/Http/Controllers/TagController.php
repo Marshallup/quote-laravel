@@ -3,7 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
-use Illuminate\Http\Request;
+
+/**
+ * @OA\Get(
+ *     path="/api/tags",
+ *     tags={"Модель Тега"},
+ *     summary="Получает теги",
+ *     description="Получает теги",
+ *     @OA\Response(response="200", description="Получает теги")
+ * )
+ */
 
 class TagController extends Controller
 {
@@ -11,14 +20,5 @@ class TagController extends Controller
   public function tags()
   {
     return Tag::all();
-  }
-
-  public function create(Request $request)
-  {
-    $tag = Tag::create([
-      'title' => $request['title'],
-    ]);
-
-    return $request;
   }
 }
